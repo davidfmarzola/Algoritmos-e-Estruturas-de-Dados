@@ -1,5 +1,5 @@
-/*Os únicos métodos permitidos são char charAt(int) e int length()
-da classe String.*/
+// Os únicos métodos permitidos são char charAt(int) e int length()
+// da classe String.
 
 class Palindromo {
    public static boolean isFim(String s) {
