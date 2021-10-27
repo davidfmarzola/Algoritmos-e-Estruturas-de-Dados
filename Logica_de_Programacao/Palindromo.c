@@ -5,7 +5,9 @@
 #define boolean short
 #define true 1
 #define false 0
-//ISO-8859-1
+
+/*Os únicos métodos permitidos são char charAt(int) e int length()
+da classe String.*/
 
 boolean isFim(char s[])
 {
@@ -31,7 +33,7 @@ int main()
 
     while (!isFim(texto))
     {
-        /*PROBLEMA: Não indentifica a palavra FIM no redirecionamento devido ao '\n' - devido ao '\n'*/
+        /*PROBLEMA: Não identifica a palavra FIM no redirecionamento devido ao '\n' - devido ao '\n'*/
         printf(palindro(texto) ? "SIM\n" : "NAO\n");
         
         fgets(texto, 1000, stdin);
