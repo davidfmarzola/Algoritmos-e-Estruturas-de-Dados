@@ -1,7 +1,7 @@
 import java.io.*;
 import java.net.*;
 
-class Teste {
+class LeituraDePaginaHtml {
 
     public static boolean isFim(String s) {
         return (s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M');
@@ -53,55 +53,55 @@ class Teste {
                 countX4++;
             if (palavra.charAt(i) == 'u')// u
                 countX5++;
-            else if (palavra.charAt(i) == 'á')// á
+            else if (palavra.charAt(i) == 'Ã¡')// Ã¡
                 countX6++;
-            if (palavra.charAt(i) == 'é')// é
+            if (palavra.charAt(i) == 'Ã©')// Ã©
                 countX7++;
-            else if (palavra.charAt(i) == 'í')// í
+            else if (palavra.charAt(i) == 'Ã­')// Ã­
                 countX8++;
-            if (palavra.charAt(i) == 'ó')// ó
+            if (palavra.charAt(i) == 'Ã³')// Ã³
                 countX9++;
-            else if (palavra.charAt(i) == 'ú')// ú
+            else if (palavra.charAt(i) == 'Ãº')// Ãº
                 countX10++;
-            if (palavra.charAt(i) == 'à')// à
+            if (palavra.charAt(i) == 'Ã ')// Ã 
                 countX11++;
-            else if (palavra.charAt(i) == 'è')// è
+            else if (palavra.charAt(i) == 'Ã¨')// Ã¨
                 countX12++;
-            if (palavra.charAt(i) == 'ì')// ì
+            if (palavra.charAt(i) == 'Ã¬')// Ã¬
                 countX13++;
-            else if (palavra.charAt(i) == 'ò')// ò
+            else if (palavra.charAt(i) == 'Ã²')// Ã²
                 countX14++;
-            if (palavra.charAt(i) == 'ù')// ù
+            if (palavra.charAt(i) == 'Ã¹')// Ã¹
                 countX15++;
-            else if (palavra.charAt(i) == 'ã')// ã
+            else if (palavra.charAt(i) == 'Ã£')// Ã£
                 countX16++;
-            if (palavra.charAt(i) == 'õ')// õ
+            if (palavra.charAt(i) == 'Ãµ')// Ãµ
                 countX17++;
-            else if (palavra.charAt(i) == 'â')// â
+            else if (palavra.charAt(i) == 'Ã¢')// Ã¢
                 countX18++;
-            if (palavra.charAt(i) == 'ê')// ê
+            if (palavra.charAt(i) == 'Ãª')// Ãª
                 countX19++;
-            else if (palavra.charAt(i) == 'î')// î
+            else if (palavra.charAt(i) == 'Ã®')// Ã®
                 countX20++;
-            if (palavra.charAt(i) == 'ô')// ô
+            if (palavra.charAt(i) == 'Ã´')// Ã´
                 countX21++;
-            else if (palavra.charAt(i) == 'û')// û
+            else if (palavra.charAt(i) == 'Ã»')// Ã»
                 countX22++;
         }
         countX1 -= table;
         countX2 -= table;
         // MyIO.setCharset(ISO 8859-1);
         MyIO.print("a(" + countX1 + ") e(" + countX2 + ") i(" + countX3 + ") o(" + countX4 + ") u(" + countX5 + ") "
-                + "á(" + countX6 + ") ");
-        MyIO.print("é(" + countX7 + ") " + "í(" + countX8 + ") " + "ó(" + countX9 + ") " + "ú(" + countX10 + ") " + "à("
-                + countX11 + ") " + "è(" + countX12 + ") ");
-        MyIO.print("ì(" + countX13 + ") " + "ò(" + countX14 + ") " + "ù(" + countX15 + ") " + "ã(" + countX16 + ") "
-                + "õ(" + countX17 + ") " + "â(" + countX18 + ") ");
-        MyIO.print("ê(" + countX19 + ") " + "î(" + countX20 + ") " + "ô(" + countX21 + ") " + "û(" + countX22 + ") ");
+                + "Ã¡(" + countX6 + ") ");
+        MyIO.print("Ã©(" + countX7 + ") " + "Ã­(" + countX8 + ") " + "Ã³(" + countX9 + ") " + "Ãº(" + countX10 + ") " + "Ã ("
+                + countX11 + ") " + "Ã¨(" + countX12 + ") ");
+        MyIO.print("Ã¬(" + countX13 + ") " + "Ã²(" + countX14 + ") " + "Ã¹(" + countX15 + ") " + "Ã£(" + countX16 + ") "
+                + "Ãµ(" + countX17 + ") " + "Ã¢(" + countX18 + ") ");
+        MyIO.print("Ãª(" + countX19 + ") " + "Ã®(" + countX20 + ") " + "Ã´(" + countX21 + ") " + "Ã»(" + countX22 + ") ");
     }
 
     public static void numeroConsoantes(String palavra) { // vogais = a, e, i, o ou u !!!
-        // se não é vogal é consoante
+        // se nÃ£o Ã© vogal Ã© consoante
         int count = 0;
         int br = quantBr(palavra);
         int table = quantTable(palavra);
