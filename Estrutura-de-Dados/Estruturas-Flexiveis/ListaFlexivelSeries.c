@@ -30,7 +30,7 @@ typedef struct
     char transmissaoOriginal[150];
     int numeroTemporadas;
     int numeroEpisodios;
-} ListaFlexivelSeries;
+} FilaFlexivelSeries;
 
 char *removeTags(char *old)
 {
@@ -138,7 +138,7 @@ int converteParaInt(char *semTags)
     return atoi(res);
 }
 
-void imprimir(ListaFlexivelSeries s1)
+void imprimir(FilaFlexivelSeries s1)
 {
     printf("%s %s %s %s %s %s %s %d %d\n", s1.nome, s1.formato, s1.duracao, s1.paisDeOrigem, s1.idiomaOriginal, s1.emissoraDeTelevisaoOriginal, s1.transmissaoOriginal, s1.numeroTemporadas, s1.numeroEpisodios);
 }
@@ -156,9 +156,9 @@ char *remove_espacos(char *atributo)
     return atributo;
 }
 
-ListaFlexivelSeries lerAtributo(FILE *fp)
+FilaFlexivelSeries lerAtributo(FILE *fp)
 {
-    ListaFlexivelSeries s1;
+    FilaFlexivelSeries s1;
     strcpy(s1.nome, remove_espacos(trataCaracteresEspeciais(trataNome(removeTags(pegaLinha(fp, "firstHeading"))))));
     strcpy(s1.formato, remove_espacos(trataCaracteresEspeciais(removeTags(pegaLinha(fp, "Formato")))));
     strcpy(s1.duracao, remove_espacos(trataCaracteresEspeciais(removeTags(pegaLinha(fp, "Duração")))));
@@ -182,11 +182,11 @@ ListaFlexivelSeries lerAtributo(FILE *fp)
 //TIPO CELULA ===================================================================
 typedef struct Celula
 {
-    ListaFlexivelSeries elemento;     // Elemento inserido na celula.
+    FilaFlexivelSeries elemento;     // Elemento inserido na celula.
     struct Celula *prox; // Aponta a celula prox.
 } Celula;
 
-Celula *novaCelula(ListaFlexivelSeries elemento)
+Celula *novaCelula(FilaFlexivelSeries elemento)
 {
     Celula *nova = (Celula *)malloc(sizeof(Celula));
     nova->elemento = elemento;
@@ -205,7 +205,7 @@ int tamanho;
  */
 void start()
 {
-    ListaFlexivelSeries s1; // não declarado(armazena lixo)
+    FilaFlexivelSeries s1; // não declarado(armazena lixo)
     primeiro = novaCelula(s1);
     ultimo = primeiro;
     indice = 0;
@@ -228,7 +228,7 @@ void getMedia()
  * Remove elemento da fila (politica FIFO).
  * @return Elemento removido.
  */
-ListaFlexivelSeries remover()
+FilaFlexivelSeries remover()
 {
     if (primeiro == ultimo)
     {
@@ -236,7 +236,7 @@ ListaFlexivelSeries remover()
     }
     Celula *tmp = primeiro;
     primeiro = primeiro->prox;
-    ListaFlexivelSeries resp = primeiro->elemento;
+    FilaFlexivelSeries resp = primeiro->elemento;
     tmp->prox = NULL;
     free(tmp);
     tmp = NULL;
@@ -248,7 +248,7 @@ ListaFlexivelSeries remover()
  * Insere elemento na fila (politica FIFO).
  * @param x int Elemento a inserir.
  */
-void inserir(ListaFlexivelSeries serie)
+void inserir(FilaFlexivelSeries serie)
 {
     ultimo->prox = novaCelula(serie);
     ultimo = ultimo->prox;
@@ -271,11 +271,11 @@ void mostrar()
     }
 }
 
-ListaFlexivelSeries abertura_do_arquivo(char caminhoDoArquivo[150])
+FilaFlexivelSeries abertura_do_arquivo(char caminhoDoArquivo[150])
 {
     FILE *fp = fopen(caminhoDoArquivo, "r");
 
-    ListaFlexivelSeries objeto = lerAtributo(fp);
+    FilaFlexivelSeries objeto = lerAtributo(fp);
 
     fclose(fp);
     return objeto;
@@ -293,7 +293,7 @@ int main()
     while (!isFim(Html))
     {
         strcat(strcpy(caminhoDoArquivo, endereco), Html);
-        ListaFlexivelSeries objeto = abertura_do_arquivo(caminhoDoArquivo);
+        FilaFlexivelSeries objeto = abertura_do_arquivo(caminhoDoArquivo);
         inserir(objeto);
         i++;
         scanf(" %[^\n]", Html);
@@ -309,7 +309,7 @@ int main()
         {
             char *t = strtok(NULL, " ");
             strcat(strcpy(caminhoDoArquivo, endereco), t);
-            ListaFlexivelSeries objeto = abertura_do_arquivo(caminhoDoArquivo);
+            FilaFlexivelSeries objeto = abertura_do_arquivo(caminhoDoArquivo);
             inserir(objeto);
         }
         else
