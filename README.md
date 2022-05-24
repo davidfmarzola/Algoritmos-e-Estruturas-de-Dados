@@ -7,15 +7,12 @@
 </div> 
 
 ### Estruturas de Dados  
-- Ponteiros
-- Vetor
-- Lista
-- Fila
-- Pilha
-- Árvores
-- Tabelas e Dicionários
-- Algoritmos de Ordenação
 - Fundamentos de análise de algoritmos
-Repositório com códigos da disciplina de Algoritmos e Estrutura de Dados II; além de outros códigos para praticar.
+- Estruturas de dados básicas lineares
+- Ordenação em memória principal
+- Estruturas de dados básicas flexíveis
+- Árvores binárias e TRIE
+- Balanceamento de árvores
+- Tabelas e dicionários
 
 ![DataStructures](https://user-images.githubusercontent.com/77236515/170149421-18559960-1040-4da2-a6f2-704146ecb112.jpg)
